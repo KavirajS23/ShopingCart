@@ -8,7 +8,7 @@ import { FooterComponent } from './footer/footer.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material/material.module';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
-import { FlexLayoutModule } from '@angular/flex-layout'
+
 
 
 @NgModule({
@@ -22,8 +22,8 @@ import { FlexLayoutModule } from '@angular/flex-layout'
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MaterialModule,
-    FlexLayoutModule
+    MaterialModule
+    
     
   ],
   providers: [],

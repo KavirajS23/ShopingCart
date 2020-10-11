@@ -11,7 +11,29 @@
             <span>Customer Care: {{customerCare}}</span>
         </p>
         <span class="greet-msg"  fxShow.sm="false" fxShow.xs="false">Welcome {{userName}}!</span>
-        
+        <div class="cart-details">
+        <span>
+            <a mat-button routerLink="/home">COMPARE(0)</a>
+        </span>
+        <span>
+            <a mat-button routerLink="/home">WISHLIST(0)</a>
+        </span>
+        <span class="mat-button-wrapper">
+            <mat-icon  >person</mat-icon>
+            <a mat-button routerLink="/home">ACCOUNT</a>
+            <mat-icon>arrow_drop_down</mat-icon>                      
+        </span>
+    </div>
+        <!--<div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+            <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+                <li>
+                    <a routerLink="/owner">Owner Actions</a>
+                </li>
+                <li>
+                    <a routerLink="/account">Account Actions</a>
+                </li>
+            </ul>
+        </div>-->
     </mat-toolbar-row>
     <mat-toolbar-row class="branding-row">
         <span>Custom Toolbar</span>
@@ -19,17 +41,5 @@
     <mat-toolbar-row fxShow="false" fxShow.gt-md class="nav-row">
         <span>Custom Toolbar</span>
     </mat-toolbar-row>
-   <!-- <div>
-        <a routerLink="/home">Owner-Account</a>
-    </div>
-    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a routerLink="/owner">Owner Actions</a>
-            </li>
-            <li>
-                <a routerLink="/account">Account Actions</a>
-            </li>
-        </ul>
-    </div>-->
+   <!-- -->
   </mat-toolbar>
