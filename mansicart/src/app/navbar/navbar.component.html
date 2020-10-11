@@ -1,0 +1,35 @@
+<mat-toolbar color="primary">
+    <mat-toolbar-row class="greetings-row">
+        <div fxHide.gt-md>
+            <button mat-icon-button (click)="onToggleSidenav()">
+                <mat-icon>menu</mat-icon>
+            </button> 
+        </div>
+        
+        <p fxShow="false" fxShow.gt-xs>
+            <mat-icon class="phone-icon">phone</mat-icon>
+            <span>Customer Care: {{customerCare}}</span>
+        </p>
+        <span class="greet-msg"  fxShow.sm="false" fxShow.xs="false">Welcome {{userName}}!</span>
+        
+    </mat-toolbar-row>
+    <mat-toolbar-row class="branding-row">
+        <span>Custom Toolbar</span>
+    </mat-toolbar-row>
+    <mat-toolbar-row fxShow="false" fxShow.gt-md class="nav-row">
+        <span>Custom Toolbar</span>
+    </mat-toolbar-row>
+   <!-- <div>
+        <a routerLink="/home">Owner-Account</a>
+    </div>
+    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
+        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
+            <li>
+                <a routerLink="/owner">Owner Actions</a>
+            </li>
+            <li>
+                <a routerLink="/account">Account Actions</a>
+            </li>
+        </ul>
+    </div>-->
+  </mat-toolbar>

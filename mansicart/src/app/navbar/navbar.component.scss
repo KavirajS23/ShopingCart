@@ -1,0 +1,44 @@
+mat-toolbar{
+    border-radius: 3px;
+}
+@media(max-width: 959px){
+    mat-toolbar{
+        border-radius: 0px;
+    }
+}
+
+.greetings-row {
+    position: relative;
+    height: 2em;
+    border-bottom: 1px solid rgba(241,248,233,.2);
+    color: rgba(243, 245, 242, 0.8);
+
+    .phone-icon {
+        position: relative;
+        top: 5px;
+        font-size: 20px;
+    }
+    p {
+        margin: 0;
+        font-size: 12px;
+    }
+    mat-icon{
+        font-size: 28px;
+    }
+    .greet-msg{
+        position: relative;
+        left: 25%;
+        font-size: 12px;
+    }
+}
+
+.branding-row{
+    position: relative;
+    height: 5em;
+}
+
+.nav-row {
+    position: relative;
+    height: 3em;
+
+}
