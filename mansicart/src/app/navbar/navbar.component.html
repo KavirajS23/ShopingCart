@@ -11,25 +11,126 @@
             <span>Customer Care: {{customerCare}}</span>
         </p>
         <span class="greet-msg"  fxShow.sm="false" fxShow.xs="false">Welcome {{userName}}!</span>
-        
+        <div class="button-right" fxHide.xs>
+            <button mat-button class="compare-button">COMPARE</button>
+            <button mat-button class="wishlist-button">
+                <span>WISHLIST</span>
+                <mat-icon>favorite</mat-icon>
+            </button>
+            <button mat-button class="account-button" [matMenuTriggerFor]="menu">
+                <mat-icon>person</mat-icon>
+                <span fxHide.sm>ACCOUNT</span>
+                <mat-icon>arrow_drop_down</mat-icon>
+            </button>
+            <mat-menu #menu="matMenu" xPosition="before">
+                <mat-list>
+                    <mat-list-item>
+                        <div mat-line>{{userName}}</div>
+                    </mat-list-item>
+                </mat-list>
+                <mat-divider></mat-divider>
+                <button mat-menu-item>
+                  <mat-icon>settings</mat-icon>
+                  <span>Account Settings</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>update</mat-icon>
+                  <span>My Order</span>
+                </button>
+                <button mat-menu-item>
+                  <mat-icon>contact_support</mat-icon>
+                  <span>Help</span>
+                </button>
+                <mat-divider></mat-divider>
+                <button mat-menu-item>
+                    <mat-icon>power_settings_new</mat-icon>
+                    <span>Sign out</span>
+                </button>
+            </mat-menu>
+        </div>
     </mat-toolbar-row>
     <mat-toolbar-row class="branding-row">
-        <span>Custom Toolbar</span>
+        <a href="/" class="brand-logo">MansiKart</a>
+        <div fxShow="false" fxShow.gt-sm class="search-bar">
+            <button mat-flat-button [matMenuTriggerFor]="categoryMenu" class="category-button">
+                <span>Category</span>
+                <mat-icon>arrow_drop_down</mat-icon>
+                <mat-menu #categoryMenu="matMenu">
+                    <button mat-menu-item>
+                        <span>All category</span>
+                    </button>
+                    <button mat-menu-item>
+                        <span>Fashion</span>
+                    </button>
+                    <button mat-menu-item>
+                        <span>Electronics</span>
+                    </button>
+                    <button mat-menu-item>
+                        <span>Jewellery</span>
+                    </button>
+                    <button mat-menu-item>
+                        <span>Sports</span>
+                    </button>
+                    <button mat-menu-item>
+                        <span>Motors</span>
+                    </button>
+                </mat-menu>
+            </button>
+            <input  class="search-input" type="text" placeholder="Type to Search..."/>
+            <button mat-mini-fab class="search-button">
+                <mat-icon>search</mat-icon>
+            </button>
+        </div>
+        <button mat-button class="shopping-cart" [matMenuTriggerFor]="shoppingcartMenu">
+            <mat-icon>shopping_cart</mat-icon>
+            <span fxHide.xs fxHide.sm fxHide.md>Shopping Cart</span>
+            <mat-icon>arrow_drop_down</mat-icon>
+            <mat-menu #shoppingcartMenu="matMenu">
+                <mat-list>
+                    <mat-list-item> 
+                        <span style="padding: 1em; font-size: 12px;">{{cartItemCount}} ITEMS</span>
+                        <a href="/shoppingcart" style="padding: 1em; font-size: 12px; position: absolute; right: 0;">VIEW CART</a>
+                    </mat-list-item>
+                    <mat-divider></mat-divider>
+                    <mat-list-item>
+                        <span style="padding: 1em; font-size: 12px;">You have no items in your shopping cart</span>
+                    </mat-list-item>
+                </mat-list>
+            </mat-menu>
+        </button>
+        <button mat-fab fxShow="true" fxHide.gt-sm class="search-btn">
+            <mat-icon>search</mat-icon>
+        </button>
     </mat-toolbar-row>
+    <mat-divider></mat-divider>
     <mat-toolbar-row fxShow="false" fxShow.gt-md class="nav-row">
-        <span>Custom Toolbar</span>
+        <div class="nav-menu">
+            <button mat-button color="primary" class="btn-home">HOME</button>
+            <button mat-button color="primary" class="btn-Fashion" [matMenuTriggerFor]="fashionMenu">
+                <span>FASHION</span>
+                <mat-icon>arrow_drop_down</mat-icon>
+                <mat-menu #fashionMenu="matMenu">               
+                    <button mat-menu-item>
+                    <mat-icon>settings</mat-icon>
+                    <span>Account Settings</span>
+                    </button>               
+                </mat-menu>
+            </button>
+            <button mat-button color="primary" class="btn-jewellary">JEWELLARY</button>
+            <button mat-button color="primary" class="btn-elecronic">ELECTRONICS</button>
+            <button mat-button color="primary" class="btn-sports">SPORTS</button>
+            <button mat-button color="primary" class="btn-pages" [matMenuTriggerFor]="pagesMenu">
+                <span>PAGES</span>
+                <mat-icon>arrow_drop_down</mat-icon>
+                <mat-menu #pagesMenu="matMenu">               
+                    <button mat-menu-item>
+                        <mat-icon>settings</mat-icon>
+                        <span>Account Settings</span>
+                    </button>               
+                </mat-menu>
+            </button>
+            <button mat-button color="primary" class="btn-contacts">CONTACTS</button>
+            <button mat-button color="primary" class="btn-adminPanel">DASH BOARD</button>
+        </div>
     </mat-toolbar-row>
-   <!-- <div>
-        <a routerLink="/home">Owner-Account</a>
-    </div>
-    <div fxFlex fxLayout fxLayoutAlign="end" fxHide.xs>
-        <ul fxLayout fxLayoutGap="15px" class="navigation-items">
-            <li>
-                <a routerLink="/owner">Owner Actions</a>
-            </li>
-            <li>
-                <a routerLink="/account">Account Actions</a>
-            </li>
-        </ul>
-    </div>-->
   </mat-toolbar>

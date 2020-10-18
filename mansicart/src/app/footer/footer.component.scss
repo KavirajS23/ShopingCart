@@ -1,0 +1,61 @@
+.footer-container{
+    position: relative;;
+    bottom:0;
+    height:auto;
+    color: #fff;
+    background-color: #673ab7;
+    padding: 20px;
+
+    .news-letter-section{
+        flex-flow: row wrap;
+        box-sizing: border-box;
+        display: flex;
+        place-content: center;
+        align-items: center;
+        padding: 0 60px 0 60px;
+        border-bottom: 1px solid rgba(241,248,233,.2);
+
+        .subscribe-caption{
+            flex-direction: column;
+            flex: 1 1 49%;
+            max-width: 49%;
+            text-align: center;
+            span{
+                display: block;
+            }
+        }
+        .form-section{
+            flex-direction: row;
+            box-sizing: border-box;
+            flex: 1 1 49%;
+            max-width: 49%;
+            text-align: center;
+
+            .email-form {
+                display: flex;
+                box-sizing: border-box;
+            
+                .mail-input{
+                    width: 70%;
+                    height: 50px;
+                    outline: none;
+                    padding: 0 15px 0 15px;
+                    font-size: 17px;
+                    border-color: 1px solid #fff; 
+                }
+                button{
+                    box-shadow: none;
+                    border-radius: 0px;
+                    bottom: 1px;
+                    background-color: #efe9f2;
+                }
+            }
+        }
+    }
+    .footer-content{
+        border-bottom: 1px solid rgba(241,248,233,.2);   
+    }
+    .copyright-section{
+        height: 10px;
+    }
+}

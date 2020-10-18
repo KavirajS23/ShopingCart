@@ -9,7 +9,7 @@ mat-toolbar{
 
 .greetings-row {
     position: relative;
-    height: 2em;
+    height: 32px;
     border-bottom: 1px solid rgba(241,248,233,.2);
     color: rgba(243, 245, 242, 0.8);
 
@@ -30,15 +30,88 @@ mat-toolbar{
         left: 25%;
         font-size: 12px;
     }
+    .button-right{
+        position: absolute;
+        right: 0;
+        font-size: 12px;
+        right: 30px;
+
+        mat-icon{
+            font-size: 20px;
+        }
+        .mat-list-item {
+            padding-left: 50px !important;
+        }
+
+    }
 }
 
 .branding-row{
     position: relative;
-    height: 5em;
+    height: 104px;
+
+    .brand-logo{
+        font-weight: 900;
+        font-size: 28px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: #fff;
+        padding: 2%;
+    }
+    .search-bar {
+        position: relative;
+        left: 10%;
+        width: 520px;
+
+        .category-button{
+            width: 30%;
+            border-top-left-radius: 20px;
+            border-bottom-left-radius: 20px;
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+            border-right: 1px solid rgba(161, 148, 148, 0.5);
+        }
+        .search-input{
+            width: 70%;
+            line-height: 36px;
+            position: relative;
+            border: none;
+            outline: none;
+            padding: 0 34px 0 12px;
+
+        }
+        .search-button{
+            background-color: #fff;
+            border-top-left-radius: 0;
+            border-bottom-left-radius: 0;
+            height: 36px;
+            top: 2px;
+            box-shadow: none;
+        }        
+    }
+    .shopping-cart{
+        position: relative;
+        left: 31%;
+
+    }
+    .search-btn {
+        position: relative;
+        background: none;
+        box-shadow: none;
+        left: 35%;
+        color: #fff;
+    }
 }
 
 .nav-row {
     position: relative;
-    height: 3em;
+    height: 48px;
+    background: #fafafa;
+    color: #616161;
+    box-shadow: 0 3px 1px -2px rgba(0,0,0,.2), 0 2px 2px 0 rgba(0,0,0,.14), 0 1px 5px 0 rgba(0,0,0,.12);
+    
+    .nav-menu{
+        margin: 0 auto;
 
+    }
 }
