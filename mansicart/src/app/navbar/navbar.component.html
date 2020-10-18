@@ -1,25 +1,24 @@
 <mat-toolbar color="primary">
     <mat-toolbar-row class="greetings-row">
-        <div fxHide.gt-md>
+        <div fxHide.gt-sm>
             <button mat-icon-button (click)="onToggleSidenav()">
                 <mat-icon>menu</mat-icon>
             </button> 
         </div>
-        
-        <p fxShow="false" fxShow.gt-xs>
+        <p fxHide.xs>
             <mat-icon class="phone-icon">phone</mat-icon>
             <span>Customer Care: {{customerCare}}</span>
         </p>
-        <span class="greet-msg"  fxShow.sm="false" fxShow.xs="false">Welcome {{userName}}!</span>
-        <div class="button-right" fxHide.xs>
+        <span class="greet-msg" fxShow="false" fxShow.gt-sm>Welcome {{userName}}!</span>
+        <div class="button-right" fxShow="false" fxShow.gt-xs>
             <button mat-button class="compare-button">COMPARE</button>
             <button mat-button class="wishlist-button">
                 <span>WISHLIST</span>
                 <mat-icon>favorite</mat-icon>
             </button>
-            <button mat-button class="account-button" [matMenuTriggerFor]="menu">
+            <button mat-button class="account-button" fxShow.xs [matMenuTriggerFor]="menu">
                 <mat-icon>person</mat-icon>
-                <span fxHide.sm>ACCOUNT</span>
+                <span fxHide.sm fxHide.xs>ACCOUNT</span>
                 <mat-icon>arrow_drop_down</mat-icon>
             </button>
             <mat-menu #menu="matMenu" xPosition="before">
@@ -51,7 +50,7 @@
     </mat-toolbar-row>
     <mat-toolbar-row class="branding-row">
         <a href="/" class="brand-logo">MansiKart</a>
-        <div fxShow="false" fxShow.gt-sm class="search-bar">
+        <div fxHide.xs fxHide.sm class="search-bar">
             <button mat-flat-button [matMenuTriggerFor]="categoryMenu" class="category-button">
                 <span>Category</span>
                 <mat-icon>arrow_drop_down</mat-icon>
@@ -98,12 +97,12 @@
                 </mat-list>
             </mat-menu>
         </button>
-        <button mat-fab fxShow="true" fxHide.gt-sm class="search-btn">
+        <button mat-fab fxHide.gt-sm class="search-btn">
             <mat-icon>search</mat-icon>
         </button>
     </mat-toolbar-row>
     <mat-divider></mat-divider>
-    <mat-toolbar-row fxShow="false" fxShow.gt-md class="nav-row">
+    <mat-toolbar-row fxHide.xs fxHide.sm class="nav-row">
         <div class="nav-menu">
             <button mat-button color="primary" class="btn-home">HOME</button>
             <button mat-button color="primary" class="btn-Fashion" [matMenuTriggerFor]="fashionMenu">
