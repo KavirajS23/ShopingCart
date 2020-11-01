@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "mansicart"
+  "defaultProject": "mansicart",
+  "cli": {
+    "analytics": "e3968fe2-81e0-4dfa-9eea-a195f2f89cb4"
+  }
 }
