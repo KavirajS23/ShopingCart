@@ -71,6 +71,11 @@ mat-toolbar{
             border-bottom-right-radius: 0;
             border-right: 1px solid rgba(161, 148, 148, 0.5);
         }
+
+        ::ng deep .mat-menu .my-menu {
+            max-width: 100% !important;
+        }
+        
         .search-input{
             width: 70%;
             line-height: 36px;

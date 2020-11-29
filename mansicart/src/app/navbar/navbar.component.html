@@ -28,7 +28,7 @@
                     </mat-list-item>
                 </mat-list>
                 <mat-divider></mat-divider>
-                <button mat-menu-item>
+                <button mat-menu-item (click)='btnClick("accountsettings")'>
                   <mat-icon>settings</mat-icon>
                   <span>Account Settings</span>
                 </button>
@@ -54,7 +54,8 @@
             <button mat-flat-button [matMenuTriggerFor]="categoryMenu" class="category-button">
                 <span>Category</span>
                 <mat-icon>arrow_drop_down</mat-icon>
-                <mat-menu #categoryMenu="matMenu">
+            </button>
+                <mat-menu #categoryMenu="matMenu" class="my-menu">
                     <button mat-menu-item>
                         <span>All category</span>
                     </button>
@@ -73,8 +74,7 @@
                     <button mat-menu-item>
                         <span>Motors</span>
                     </button>
-                </mat-menu>
-            </button>
+                </mat-menu>            
             <input  class="search-input" type="text" placeholder="Type to Search..."/>
             <button mat-mini-fab class="search-button">
                 <mat-icon>search</mat-icon>
@@ -121,11 +121,8 @@
             <button mat-button color="primary" class="btn-pages" [matMenuTriggerFor]="pagesMenu">
                 <span>PAGES</span>
                 <mat-icon>arrow_drop_down</mat-icon>
-                <mat-menu #pagesMenu="matMenu">               
-                    <button mat-menu-item>
-                        <mat-icon>settings</mat-icon>
-                        <span>Account Settings</span>
-                    </button>               
+                <mat-menu #pagesMenu="matMenu">                                              
+                    <button mat-button color="primary" class="btn-sidenav-signin" (click)='btnClick("signin")'>SIGN IN</button>              
                 </mat-menu>
             </button>
             <button mat-button color="primary" class="btn-contacts">CONTACTS</button>

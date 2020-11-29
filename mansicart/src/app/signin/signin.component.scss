@@ -1,0 +1,52 @@
+.form-container{
+    position: relative;; 
+    width: auto;
+    
+    .flex-layout{    
+        position: relative;  
+        width: 100%;
+        display: flex;
+        flex-flow: row wrap;
+        mat-form-field{
+            display: inline;
+        }
+
+        .form-signin{
+           text-align: center;
+            position: relative;
+            display: inline;            
+            flex:1;
+            padding:20px 40px 20px 40px;
+            .social-icons{
+                position: relative;
+                padding: 40px;
+                text-align: left; 
+               
+                h3{
+                    text-align: center;                    
+                    padding: 0 15px 0 15px;
+                }           
+                img{
+                    width: 35px;
+                    height: 35px;
+                    padding: 10px;
+                    color: red;
+                    display: inline-block;
+                }
+
+                .icons-row{
+                    padding: 25px;
+                    text-align: center;
+                }
+            }            
+       }
+    
+        .form-signup{
+            position:relative;
+            display: inline;              
+            flex:1;
+            padding:20px 40px 20px 40px;
+            text-align: center;
+        }
+    }
+}

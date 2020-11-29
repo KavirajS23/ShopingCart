@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, Validators} from '@angular/forms';
+import {FormControl, Validators,FormBuilder, FormGroup} from '@angular/forms';
+import { validateBasis } from '@angular/flex-layout';
+
 
 @Component({
   selector: 'app-signin',
@@ -7,19 +9,49 @@ import {FormControl, Validators} from '@angular/forms';
   styleUrls: ['./signin.component.scss']
 })
 export class SigninComponent implements OnInit {
+  signInForm: FormGroup;
+  registrationForm:FormGroup;
+  submitted = false;
 
-  constructor() { }
+  constructor(private formBuilder:FormBuilder) { }
 
   ngOnInit(): void {
+
+    this.signInForm = this.formBuilder.group({
+      email:['',Validators.required],
+      password:['',Validators.required,Validators.minLength(8)]
+    })
+
+    this.registrationForm=this.formBuilder.group({
+      fullname:['',Validators.required],      
+      email:['',Validators.required],
+      password:['',Validators.required,Validators.minLength(8)],
+      confirm_password:['',Validators.required]
+    })
+
   }
 
-  email = new FormControl('', [Validators.required, Validators.email]);
+  get fval() {
+    return this.signInForm.controls;
+  }
 
-  getErrorMessage() {
-    if (this.email.hasError('required')) {
-      return 'You must enter a value';
+  get fvalsignUp() {
+    return this.registrationForm.controls;
+  }
+
+  signIn(){
+    this.submitted = true;
+    if (this.signInForm.invalid) {
+      return;
     }
-
-    return this.email.hasError('email') ? 'Not a valid email' : '';
+    alert('form fields are validated successfully!');
+  }
+  
+  signUp(){
+    this.submitted = true;
+    if (this.registrationForm.invalid) {
+      return;
+    }
+    alert('form fields are validated successfully!');
   }
 }

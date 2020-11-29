@@ -1,14 +1,84 @@
-<div class="form-signIn">
-    <div class="formfield-email">        
-            <mat-form-field appearance="outline">
-            <mat-label>Enter your email</mat-label>
-            <input matInput placeholder="pat@example.com" [formControl]="email" required>
-            <mat-error *ngIf="email.invalid">{{getErrorMessage()}}</mat-error>
-            </mat-form-field>        
-           
-            <mat-form-field appearance="outline">
-            <mat-label>Enter Your Password</mat-label>
-            <input matInput  required>            
-            </mat-form-field>        
+<mat-card class="form-container">
+    <div fxLayout="row-wrap" class="flex-layout">
+        <div class="form-signin">   
+            <h1>SignIn</h1>   
+            <form [formGroup]="signInForm" (ngSubmit)="signIn();">   
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input type="email" matInput placeholder="pat@example.com"  formControlName="email"[ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
+                    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">                    
+                        <mat-error *ngIf="fval.email.errors.required">Email is required</mat-error>
+                        <mat-error *ngIf="fval.email.errors.email">Enter a valid email address</mat-error>
+                    </div>                   
+                </mat-form-field>        
+                
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Your Password</mat-label>
+                    <input type="password" matInput placeholder="enter password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && fval.password.errors}" >            
+                    <div *ngIf="submitted && fval.password.errors"class="invalid-feedback">
+                        <mat-error *ngIf="fval.password.errors.required">Password  is required</mat-error>
+                        <mat-error *ngIF="fval.password.errors.minlength">Passwor must be atleast 8 characters</mat-error>
+                    </div>
+                </mat-form-field>  
+
+                <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>
+            </form>
+
+            <div class="social-icons">                
+                <h3>or sign in with one click</h3>                
+                <div class="icons-row">
+                    <img src="../../assets/icons/facebook.svg" alt="facebook_link"/>
+                    <img src="../../assets/icons/twitter.svg" alt="twitter"/>
+                    <img src="../../assets/icons/google-plus.svg" alt="googleplus_link"/>
+                </div>
+            </div>
+        </div>
+
+        <div class="form-signup">
+            <h1>Don't Have an Account? Sign Up Now!!</h1>
+            <form [formGroup]="registrationForm" (ngSubmit)="signUp();">
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your Full name</mat-label>
+                    <input type="text" matInput placeholder="enter full name"  formControlName="fullname" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.fullName.errors }">
+                    <div *ngIf="submitted && fvalsignUp.fullName.errors" class="invalid-feedback">
+                        <mat-error *ngIf="fvalsignUp.fullName.errors.required">Full Name is required and must be a valid name</mat-error>  
+                    </div>                         
+                </mat-form-field>  
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter your email</mat-label>
+                    <input type="email" matInput placeholder="enter email id" formControlName="email" [ngClass]="{'is-invalid':submitted && fvalsignUp.email.errors}">
+                    <div *ngIf="submitted && fvalsignUp.email.errors" class="invalid-feedback">
+                        <mat-error *ngIf="fvalsignUp.email.errors.required">Email is Required</mat-error>
+                        <mat-error *ngIf="fvalsignUp.email.errors.email">Enter a valid Email</mat-error>
+                    </div>                    
+                </mat-form-field>  
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Enter Password</mat-label>
+                    <input type="password" matInput placeholder="enter password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.password.errors }">
+                    <div *ngIf="submitted && fvalsignUp.password.errors"class="invalid-feedback">
+                        <mat-error *ngIf="fvalsignUp.password.errors.required">Password  is required</mat-error>
+                        <mat-error *ngIF="fvalsignUp.password.errors.minlength">Passwor must be atleast 8 characters</mat-error>
+                    </div>
+                </mat-form-field>  
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input type="password" matInput placeholder="re-enter password" formControlName="confirm_password" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.confirm_password.errors }" appConfirmEqualValidator='password'>
+                    <div *ngIf="submitted && fvalsignUp.confirm_password.errors"class="invalid-feedback">
+                        <mat-error *ngIf="fvalsignUp.confirm_password.errors.required">Password  is required</mat-error>
+                        <mat-error *ngIF="fvalsignUp.confirm_password.errors?.notEqual">Passwor Mismatch</mat-error>
+                    </div>
+                </mat-form-field>
+                <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                </button>                
+            </form>            
+        </div>
     </div>
-</div>
+</mat-card>

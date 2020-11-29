@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-sidenav-list',
@@ -8,9 +9,11 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavListComponent implements OnInit {
 
   panelOpenState=false;
-  constructor() { }
-
   ngOnInit(): void {
-  }
+  }  
+  constructor(private _router: Router) { }
 
+  btnClick= function (param:string) {  
+    this._router.navigateByUrl(param);
+  };
 }
