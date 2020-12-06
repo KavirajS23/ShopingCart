@@ -1,7 +1,19 @@
 .account-nav{
     position: relative;
     display: inline-block;
-    background-color: white;
-    height: auto;
-    width: auto;
+    
+    .account-sidenav{
+        position: relative;
+        display: inline-block;
+        background-color: white;
+        height: auto;
+        width: auto;
+        flex:1;
+        margin-right:15px;
+    }
+
+    .account-routes{        
+        position: relative;
+        display: inline-block;          
+    }
 }

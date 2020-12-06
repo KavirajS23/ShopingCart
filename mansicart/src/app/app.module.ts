@@ -11,7 +11,10 @@ import { FooterComponent } from './footer/footer.component';
 import { MaterialModule } from './material/material.module';
 import { SidenavListComponent } from './sidenav-list/sidenav-list.component';
 import { SigninComponent } from './signin/signin.component';
-import { AccountSettingsComponent } from './account-settings/account-settings.component'
+import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { AccountDashboardComponent } from './account-dashboard/account-dashboard.component';
+import { AccountInformationComponent } from './account-information/account-information.component';
+import { AccountAddressComponent } from './account-address/account-address.component'
 
 
 @NgModule({
@@ -21,7 +24,10 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
     FooterComponent,
     SidenavListComponent,
     SigninComponent,
-    AccountSettingsComponent
+    AccountSettingsComponent,
+    AccountDashboardComponent,
+    AccountInformationComponent,
+    AccountAddressComponent
   ],
   imports: [
     BrowserModule,
