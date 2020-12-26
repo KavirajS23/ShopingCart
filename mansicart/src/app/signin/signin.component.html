@@ -2,14 +2,14 @@
     <div fxLayout="row-wrap" class="flex-layout">
         <div class="form-signin">   
             <h1>SignIn</h1>   
-            <form [formGroup]="signInForm" (ngSubmit)="signIn();">   
+            <form [formGroup]="signInForm" (ngSubmit)="signIn()">   
 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your email</mat-label>
-                    <input type="email" matInput placeholder="pat@example.com"  formControlName="email"[ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
-                    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">                    
-                        <mat-error *ngIf="fval.email.errors.required">Email is required</mat-error>
-                        <mat-error *ngIf="fval.email.errors.email">Enter a valid email address</mat-error>
+                    <input type="email" matInput placeholder="pat@example.com"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
+                    <div *ngIf="submitted && fval['email'].invalid" class="invalid-feedback">                    
+                        <mat-error *ngIf="fval.email.errors && fval.email.errors.required">Email is required</mat-error>
+                        <mat-error *ngIf="fval.email.errors && fval.email.errors.email">Enter a valid email address</mat-error>
                     </div>                   
                 </mat-form-field>        
                 
@@ -22,8 +22,8 @@
                     </div>
                 </mat-form-field>  
 
-                <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-                    <mat-icon>delete</mat-icon>
+                <button mat-fab color="primary" type="submit">
+                    <mat-icon>login</mat-icon>
                 </button>
             </form>
 
@@ -39,7 +39,7 @@
 
         <div class="form-signup">
             <h1>Don't Have an Account? Sign Up Now!!</h1>
-            <form [formGroup]="registrationForm" (ngSubmit)="signUp();">
+            <form [formGroup]="registrationForm" (ngSubmit)="signUp()">
 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your Full name</mat-label>
