@@ -6,8 +6,8 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter your email</mat-label>
-                    <input type="email" matInput placeholder="pat@example.com"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
-                    <div *ngIf="submitted && fval['email'].invalid" class="invalid-feedback">                    
+                    <input type="email" matInput placeholder="pat@example.com"  formControlName="email" [ngClass]="{ 'is-invalid': submitted && fval && fval.email.errors }" />
+                    <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">                    
                         <mat-error *ngIf="fval.email.errors && fval.email.errors.required">Email is required</mat-error>
                         <mat-error *ngIf="fval.email.errors && fval.email.errors.email">Enter a valid email address</mat-error>
                     </div>                   
@@ -15,7 +15,7 @@
                 
                 <mat-form-field appearance="outline">
                     <mat-label>Enter Your Password</mat-label>
-                    <input type="password" matInput placeholder="enter password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && fval.password.errors}" >            
+                    <input type="password" matInput placeholder="enter password"  formControlName="password" [ngClass]="{ 'is-invalid': submitted && fval && fval.password.errors}" >            
                     <div *ngIf="submitted && fval.password.errors"class="invalid-feedback">
                         <mat-error *ngIf="fval.password.errors.required">Password  is required</mat-error>
                         <mat-error *ngIF="fval.password.errors.minlength">Passwor must be atleast 8 characters</mat-error>
@@ -46,7 +46,7 @@
                     <input type="text" matInput placeholder="enter full name"  formControlName="fullname" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.fullName.errors }">
                     <div *ngIf="submitted && fvalsignUp.fullName.errors" class="invalid-feedback">
                         <mat-error *ngIf="fvalsignUp.fullName.errors.required">Full Name is required and must be a valid name</mat-error>  
-                    </div>                         
+                    </div>                        
                 </mat-form-field>  
 
                 <mat-form-field appearance="outline">
@@ -55,7 +55,7 @@
                     <div *ngIf="submitted && fvalsignUp.email.errors" class="invalid-feedback">
                         <mat-error *ngIf="fvalsignUp.email.errors.required">Email is Required</mat-error>
                         <mat-error *ngIf="fvalsignUp.email.errors.email">Enter a valid Email</mat-error>
-                    </div>                    
+                    </div>
                 </mat-form-field>  
 
                 <mat-form-field appearance="outline">
@@ -69,10 +69,10 @@
 
                 <mat-form-field appearance="outline">
                     <mat-label>Confirm Password</mat-label>
-                    <input type="password" matInput placeholder="re-enter password" formControlName="confirm_password" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.confirm_password.errors }" appConfirmEqualValidator='password'>
-                    <div *ngIf="submitted && fvalsignUp.confirm_password.errors"class="invalid-feedback">
+                   <input type="password" matInput placeholder="re-enter password" formControlName="confirm_password" [ngClass]="{ 'is-invalid': submitted && fvalsignUp.confirm_password.errors }" >
+                   <div *ngIf="submitted && fvalsignUp.confirm_password.errors"class="invalid-feedback">
                         <mat-error *ngIf="fvalsignUp.confirm_password.errors.required">Password  is required</mat-error>
-                        <mat-error *ngIF="fvalsignUp.confirm_password.errors?.notEqual">Passwor Mismatch</mat-error>
+                        <mat-error *ngIF="fvalsignUp.confirm_password.errors.minlength">Passwor Mismatch</mat-error>
                     </div>
                 </mat-form-field>
                 <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
